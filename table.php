@@ -25,4 +25,8 @@ class Table {
     public function setReserved(bool $reserved): void {
         $this->reserved = $reserved;
     }
+    public function __toString(): string {
+        $estado = $this->reserved ? "reservada" : "lliure";
+        return "Taula {$this->id} ({$this->chairs} cadires) - {$estado}";
+    }
 }
